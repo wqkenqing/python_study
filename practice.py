@@ -1,9 +1,24 @@
-list = [ 'runoob', 786 , 2.23, 'john', 70.2 ]
-tinylist = [123, 'john']
- 
-print list               # 输出完整列表
-print list[0]            # 输出列表的第一个元素
-print list[1:3]          # 输出第二个至第三个的元素 
-print list[2:]           # 输出从第三个开始至列表末尾的所有元素
-print tinylist * 2       # 输出列表两次
-print list + tinylist    # 打印组合的列表
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+import time;  # 引入time模块
+
+ticks = time.time()
+print "当前时间戳为:", ticks
+localtime = time.localtime(time.time())
+print "本地时间为 :", localtime
+
+localtime = time.asctime( time.localtime(time.time()) )
+print "本地时间为 :", localtime
+
+
+# 格式化成2016-03-20 11:45:39形式
+print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) 
+
+# 格式化成Sat Mar 28 22:24:24 2016形式
+print time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()) 
+  
+# 将格式字符串转换为时间戳
+a = "Sat Mar 28 22:24:24 2016"
+
+print time.mktime(time.strptime(a,"%a %b %d %H:%M:%S %Y"))
